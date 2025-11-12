@@ -10,9 +10,6 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  // runtimeConfig: {
-  //   mongoUri: process.env.MONGO_URI,
-  //   jwtSecret: process.env.JWT_SECRET,
-  // },
+
   modules: ['@pinia/nuxt'],
 })

@@ -1,13 +1,15 @@
 <script setup>
-import { useAuthStore } from '~/stores/auth'
-const auth = useAuthStore()
-
-if (!auth.user) navigateTo('/login')
+import Topbar from '../components/Topbar.vue';
+import Herobanner from '~/components/Herobanner.vue';
+import Featuresection from '~/components/Featuresection.vue';
+import AboutSection from '~/components/AboutSection.vue';
 </script>
 
 <template>
-  <div class="p-10">
-    <h1 class="text-xl">Welcome, {{ auth.user?.username }}</h1>
-    <button @click="auth.logout(); navigateTo('/login')" class="bg-red-600 text-white p-2 mt-4">Logout</button>
+  <div >
+      <Topbar/>
+      <Herobanner/>
+      <Featuresection/>
+      <AboutSection/>
   </div>
 </template>
