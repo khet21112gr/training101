@@ -15,6 +15,7 @@ export const getPool = () => {
 }
 
 export async function query(sql, params = []) {
+  
   const pool = getPool()
   const conn = await pool.getConnection()
   try {
