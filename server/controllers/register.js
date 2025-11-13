@@ -6,6 +6,6 @@ exports.register = async (req,res) =>{
     if (!username || ! password){
         return res.status(400).json({ ok: false , message:"bad request"})
     }
-    const 
+     
     return res.status(200).json({ ok: true , message:"sucess"})
 }
