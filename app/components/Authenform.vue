@@ -30,13 +30,40 @@ const handleSubmit = async () => {
             const req = await axios.post('http://localhost:5000/api/auth/register',{
                 username: username.value,
                 password: password.value
+                
             })
             // console.log(req.data.)
+            return
         }catch{
 
         }
         
+    }else{
+        if(username.value.length < 1 || password.value.length < 1){
+            Error.value = 'กรุณากรอกข้อมูล'
+            setError.value = true
+            setTimeout(() => {
+                setError.value = false
+                Error.value = null
+            }, 3000);
+            return
+        }
+        try{
+            const req = await axios.post('http://localhost:5000/api/auth/login', {
+                username: username.value,
+                password: password.value
+            })
+            username.value = "";
+            password.value = ""
+            if(req.data.role){
+                navigateTo('/Home')
+            }
+        }catch{
+
+        }
+
     }
+
 }
 </script>
 
