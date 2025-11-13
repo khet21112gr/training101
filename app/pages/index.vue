@@ -1,7 +1,7 @@
 <script setup>
 import Topbar from '../components/Topbar.vue';
 import Herobanner from '~/components/Herobanner.vue';
-import Featuresection from '~/components/Featuresection.vue';
+import FeatureSection from '~/components/FeatureSection.vue';
 import AboutSection from '~/components/AboutSection.vue';
 </script>
 
@@ -9,7 +9,7 @@ import AboutSection from '~/components/AboutSection.vue';
   <div >
       <Topbar/>
       <Herobanner/>
-      <Featuresection/>
+      <FeatureSection/>
       <AboutSection/>
   </div>
 </template>

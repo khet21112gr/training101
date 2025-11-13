@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import axios from 'axios';
 const isSignUp = ref(false)
 const username = ref("")
 const password = ref("")
@@ -11,7 +12,7 @@ const handleToggle = () => {
     isSignUp.value = !isSignUp.value
 }
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
     //isSignup = true  register 
     setError.value = false
     Error.value = null
@@ -25,6 +26,16 @@ const handleSubmit = () => {
             }, 3000);
             return
         }
+        try{
+            const req = await axios.post('http://localhost:5000/api/auth/register',{
+                username: username.value,
+                password: password.value
+            })
+            // console.log(req.data.)
+        }catch{
+
+        }
+        
     }
 }
 </script>
@@ -37,7 +48,7 @@ const handleSubmit = () => {
             </p>
         </NuxtLink>
     </div>
-    <div class="flex justify-center m-60  ">
+    <div class="flex justify-center m-40  ">
         <div class="">
             <p class="text-3xl font-mono font-bold w-90">{{ isSignUp ? "Sign In !" : "Welcome Back !" }} </p>
             <form @submit.prevent="handleSubmit">
