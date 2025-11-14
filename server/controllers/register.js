@@ -10,7 +10,7 @@ export const register = async (req,res) =>{
         'INSERT INTO users (username, password, ROLE) VALUES (?, ?, ?)',
         [username,password,user]
     )
-    console.log(result)
 
+    console.log(result)
     return res.status(200).json({ ok: true , message:"success"})
 }
