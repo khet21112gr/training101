@@ -9,7 +9,7 @@ import fetchinfo from '~/components/fetchinfo.vue';
 
 </script>
 <template>
-    this main page
+    this main page asdadsadasdasdasdasdasdasdsdaasdasd
     <LogoutButton/>
     <fetchinfo/>
 </template>
