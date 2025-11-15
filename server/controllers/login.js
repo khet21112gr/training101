@@ -12,10 +12,11 @@ export const login = async (req, res) => {
         if (!check.length){
             return res.status(401).json({message: "unauthorized"})
         }
-    const userRole = check[0].ROLE
-    const userid = check[0].userid
-    const token = jwt.sign({id: userid  ?? null,username:  username }, JWT_SECRET,{ expiresIn: "8h" })
+    const user_role = check[0].role
+    const user_name = check[0].username
+    const user_id = check[0].userid
+    const token = jwt.sign({id: user_id  ,username:  user_name,role: user_role }, JWT_SECRET,{ expiresIn: "8h" })
     // console.log("created token :",token)
     
-    return res.status(200).json({ok: true,userRole, username, token})
+    return res.status(200).json({ok: true, token})
 }

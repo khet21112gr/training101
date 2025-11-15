@@ -1,15 +1,14 @@
-<script >
+ <script>
 import LogoutButton from '~/components/LogoutButton.vue';
-import fetchinfo from '~/components/fetchinfo.vue';
-// import { useFetch } from '#app';
-// import axios from 'axios';
-// const 
-
-
-
+import Fetchinfo from '~/components/Fetchinfo.vue';
+import CreateWorkSpace from '~/components/CreateWorkSpace.vue';
 </script>
 <template>
-    this main page asdadsadasdasdasdasdasdasdsdaasdasd
+<div class="flex gap-2">
     <LogoutButton/>
-    <fetchinfo/>
+   <Fetchinfo/>
+   <createWorkSpace/>
+</div>
+    
+    
 </template>

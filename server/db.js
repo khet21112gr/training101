@@ -15,7 +15,7 @@ console.log('Loaded environment variables:');
 console.log('DB_USER:', process.env.DB_USER || 'undefined');
 console.log('DB_PASSWORD:', process.env.DB_PASSWORD ? '(hidden)' : 'undefined');
 
-export const db = await mysql.createConnection({
+export const db = mysql.createPool({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT || 3306,
   user: process.env.DB_USER,

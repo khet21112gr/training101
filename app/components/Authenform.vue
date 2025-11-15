@@ -66,7 +66,7 @@ const handleSubmit = async () => {
             password.value = ""
             console.log(req.data.userRole)
             console.log(req.data.token)
-            if(req.data.userRole ==  "user"){
+            if(req.data.userRole ==  "student"|| "admin"|| "teachher"){
                 localStorage.setItem("token",req.data.token)
                 localStorage.setItem("name",req.data.username)
                 navigateTo('/Home')

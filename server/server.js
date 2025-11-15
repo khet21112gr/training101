@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import authRouter from "./router/authapi.js"
 import infoRouter from "./router/infoapi.js"
-
+import wsRouter from "./router/wsapi.js"
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors())
 
+app.use('api/ws' , wsRouter)
 app.use('/api/auth', authRouter);
 app.use('/api/info' , infoRouter)
 
